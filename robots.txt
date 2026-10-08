@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reference your sitemap to help bots find all pages quickly
+Sitemap: https://shitansha.com.np/sitemap.xml
