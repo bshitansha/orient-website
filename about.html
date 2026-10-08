@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Orient Consultancy Pvt. Ltd.</title>
+  <meta name="description" content="Orient Consultancy Pvt. Ltd. is a trusted educational consultancy in Kathmandu, established in 2014, guiding Nepalese students toward global academic opportunities and student visa success.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- style.css = shared header/footer/buttons. about.css = this page only. Keep this order. -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="nav-responsive.css">
+</head>
+<body class="about-page">
+
+  <!-- ================= HEADER (same as other pages) ================= -->
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Orient Consultancy - Home">
+      <img src="images/logo.png" alt="Orient Consultancy Pvt. Ltd." width="230" height="70">
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Study destination
+            <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown">
+            <li><a href="country.html?c=south-korea"><img class="dd-flag" src="images/flags/south-korea.svg" alt="" width="20" height="14"><span>Korean Student Visa (D-2 / D-4 Visa)</span></a></li>
+            <li><a href="country.html?c=uk"><img class="dd-flag" src="images/flags/uk.svg" alt="" width="20" height="14"><span>UK Student Visa (Tier 4 Visa)</span></a></li>
+            <li><a href="country.html?c=australia"><img class="dd-flag" src="images/flags/australia.svg" alt="" width="20" height="14"><span>Australian Student Visa (Subclass 500)</span></a></li>
+            <li><a href="country.html?c=usa"><img class="dd-flag" src="images/flags/usa.svg" alt="" width="20" height="14"><span>U.S. Student Visa (F-1 Visa)</span></a></li>
+            <li><a href="country.html?c=japan"><img class="dd-flag" src="images/flags/japan.svg" alt="" width="20" height="14"><span>Japanese Student Visa</span></a></li>
+            <li><a href="country.html?c=denmark"><img class="dd-flag" src="images/flags/denmark.svg" alt="" width="20" height="14"><span>Denmark Student Visa</span></a></li>
+            <li class="has-sub">
+              <a class="dropdown-more sub-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span>Other European Countries</span></a>
+              <ul class="submenu">
+                <li><a href="country.html?c=germany"><img class="dd-flag" src="images/flags/germany.svg" alt="" width="20" height="14"><span>Germany Student Visa</span></a></li>
+                <li><a href="country.html?c=malta"><img class="dd-flag" src="images/flags/malta.svg" alt="" width="20" height="14"><span>Malta Student Visa</span></a></li>
+                <li><a href="country.html?c=dubai"><img class="dd-flag" src="images/flags/uae.svg" alt="" width="20" height="14"><span>Dubai Student Visa</span></a></li>
+                <li><a href="country.html?c=finland"><img class="dd-flag" src="images/flags/finland.svg" alt="" width="20" height="14"><span>Finland Student Visa</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- ---------- HERO: compass + title ---------- -->
+    <section class="ab-hero" aria-labelledby="page-title">
+      <div class="ab-hero-grid">
+        <div class="ab-hero-text">
+          <h1 id="page-title">About Us</h1>
+          <p class="ab-hero-sub">Hi, we are the Orient Consultancy team. Here you can find more information about us in this field.</p>
+        </div>
+
+                <!-- Compass drawn in SVG. It settles on North, then keeps gently swaying like a real needle. -->
+        <svg class="ab-compass" viewBox="0 0 400 400" role="img" aria-label="A compass pointing north">
+          <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="104" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+
+          <!-- NEW: slowly turning ring of small marks -->
+          <circle class="ab-ring" cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3" stroke-dasharray="1.5 14" stroke-linecap="round"/>
+
+          <g stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round">
+            <path d="M200 10v26M200 364v26M10 200h26M364 200h26"/>
+          </g>
+          <g stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M65.6 65.6l16 16M318.4 65.6l-16 16M65.6 334.4l16-16M318.4 334.4l-16-16"/>
+          </g>
+          <g font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="22" text-anchor="middle" fill="#ffffff">
+            <text class="ab-north" x="200" y="66" fill="#f59a1b">N</text>
+            <text x="338" y="208">E</text>
+            <text x="200" y="346">S</text>
+            <text x="62" y="208">W</text>
+          </g>
+          <g class="ab-needle">
+            <polygon points="200,92 220,200 180,200" fill="#f59a1b"/>
+            <polygon points="200,308 220,200 180,200" fill="#ffffff" fill-opacity=".85"/>
+            <circle cx="200" cy="200" r="9" fill="#14335a" stroke="#ffffff" stroke-width="3"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ---------- QUICK FACTS (overlaps the hero) ---------- -->
+    <section class="ab-wrap ab-facts-wrap" aria-label="Orient Consultancy at a glance">
+      <dl class="ab-facts">
+        <div>
+          <dt>Established</dt>
+          <dd>Since 2014</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>Beside PK Campus, Bagbazar, Kathmandu</dd>
+        </div>
+        <div>
+          <dt>We specialize in</dt>
+          <dd>Student visa processing</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ---------- STORY + DESTINATION ROUTE ---------- -->
+    <section class="ab-wrap ab-story" aria-labelledby="story-heading">
+      <div class="ab-story-text">
+        <p class="ab-kicker">Exceptional Service</p>
+        <h2 id="story-heading">Hi, we are the <span>Orient Consultancy</span> team</h2>
+        <p class="ab-lead">Here you can find more information about us in this field.</p>
+        <p>Orient Consultancy Pvt. Ltd. is a trusted educational consultancy established since 2014 with the mission of guiding Nepalese students toward global academic opportunities. Located conveniently beside PK Campus in Bagbazar, Kathmandu, we specialize in student visa processing for leading study destinations including South Korea, Australia, Japan, the USA, Germany, and other European countries.</p>
+        <!-- REVIEW THIS WORDING (copied from your live site):
+             "a year of successful operations" does not match "established since 2014",
+             and "guaranteed visa success" is a strong promise. -->
+        <p>Our key strength lies in our strong network in South Korea, allowing us to offer guaranteed visa success for students aspiring to study there. With a year of successful operations, we have quickly become a preferred choice for students seeking reliable guidance and transparent services.</p>
+        <a class="btn btn-primary" href="contact.html">Talk to a Counselor
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Destinations shown as stops on a route -->
+      <aside class="ab-route" aria-labelledby="route-heading">
+        <h3 id="route-heading">Study destinations</h3>
+        <ol>
+          <li>South Korea</li>
+          <li>Australia</li>
+          <li>Japan</li>
+          <li>The USA</li>
+          <li>Germany</li>
+          <li>Other European countries</li>
+        </ol>
+      </aside>
+    </section>
+
+    <!-- ---------- STRENGTHS ---------- -->
+    <section class="ab-wrap ab-strengths" aria-label="Our strengths">
+      <article class="ab-strength ab-strength-main">
+        <span class="ab-strength-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 26 26"><circle cx="13" cy="13" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 13h19M13 3.5c3 3 3 16 0 19M13 3.5c-3 3-3 16 0 19" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <h3>Strong network in South Korea</h3>
+        <p>Our key strength lies in our strong network in South Korea.</p>
+      </article>
+      <article class="ab-strength">
+        <span class="ab-strength-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26"><path d="M5 13.5l5.5 5.5L21 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3>Reliable guidance</h3>
+        <p>A preferred choice for students seeking reliable guidance.</p>
+      </article>
+      <article class="ab-strength">
+        <span class="ab-strength-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26"><path d="M3 13s3.5-7 10-7 10 7 10 7-3.5 7-10 7S3 13 3 13z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="13" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <h3>Transparent services</h3>
+        <p>Clear, honest services at every stage of your journey.</p>
+      </article>
+    </section>
+
+    <!-- ---------- ORIENT: the name, letter by letter ---------- -->
+    <section class="ab-orient" aria-labelledby="orient-heading">
+      <div class="ab-wrap ab-orient-grid">
+        <div class="ab-orient-intro">
+          <p class="ab-kicker ab-kicker-light">Orient Consultancy Pvt. Ltd.</p>
+          <h2 id="orient-heading">I – <span>Inspiration</span></h2>
+          <p class="ab-orient-sub">Every letter of our name stands for something we believe in.</p>
+          <!-- LEARN tiles are drawn with CSS, no photo needed -->
+          <div class="ab-tiles" role="img" aria-label="Letter tiles spelling LEARN">
+            <span>L</span><span>E</span><span>A</span><span>R</span><span>N</span>
+          </div>
+        </div>
+
+        <ol class="ab-letters">
+          <li>
+            <span class="ab-letter" aria-hidden="true">O</span>
+            <div><h3>Opportunities</h3><p>Empowering students with global academic options.</p></div>
+          </li>
+          <li>
+            <span class="ab-letter" aria-hidden="true">R</span>
+            <div><h3>Reach</h3><p>Connecting students to top universities and institutions.</p></div>
+          </li>
+          <li>
+            <span class="ab-letter" aria-hidden="true">I</span>
+            <div><h3>Inspiration</h3><p>Motivating individuals to pursue their dreams.</p></div>
+          </li>
+          <li>
+            <span class="ab-letter" aria-hidden="true">E</span>
+            <div><h3>Education</h3><p>Centered around learning, growth, and excellence.</p></div>
+          </li>
+          <li>
+            <span class="ab-letter" aria-hidden="true">N</span>
+            <div><h3>Navigation</h3><p>Guiding through admissions, visas, and career paths.</p></div>
+          </li>
+          <li>
+            <span class="ab-letter" aria-hidden="true">T</span>
+            <div><h3>Transformation</h3><p>Helping students evolve into future professionals.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ---------- TEAM ---------- -->
+    <section class="ab-wrap ab-team" aria-labelledby="team-heading">
+      <div class="ab-team-head">
+        <p class="ab-kicker">The people behind Orient</p>
+        <h2 id="team-heading">Our <span>Team</span></h2>
+      </div>
+
+      <div class="ab-team-grid">
+        <article class="ab-person">
+          <div class="ab-avatar">
+            <span class="ab-initials" aria-hidden="true">SB</span>
+            <!-- Photo: images/team/shiddhi-chandra-baral.jpg (square, about 400x400). Hidden automatically if missing. -->
+            <img src="images/team/shiddhi-chandra-baral.jpg" alt="Mr. Shiddhi Chandra Baral" width="160" height="160" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="ab-person-info">
+            <h3>Mr. Shiddhi Chandra Baral</h3>
+            <p class="ab-role">Chief Executive Officer</p>
+            <a class="ab-phone" href="tel:+9779767259997">☎ 9767259997</a>
+          </div>
+        </article>
+
+        <article class="ab-person">
+          <div class="ab-avatar">
+            <span class="ab-initials" aria-hidden="true">SS</span>
+            <!-- Photo: images/team/shanta-sharma-baral.jpg (square, about 400x400). Hidden automatically if missing. -->
+            <img src="images/team/shanta-sharma-baral.jpg" alt="Mrs. Shanta Sharma Baral" width="160" height="160" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="ab-person-info">
+            <h3>Mrs. Shanta Sharma Baral</h3>
+            <p class="ab-role">Managing Director &amp; Head Counselor</p>
+            <a class="ab-phone" href="tel:+9779767259997">☎ 9767259997</a>
+          </div>
+        </article>
+                <article class="ab-person">
+          <div class="ab-avatar">
+            <span class="ab-initials" aria-hidden="true">SB</span>
+            <!-- Photo: images/team/shitansha-baral.jpg (square, about 400x400). Hidden automatically if missing. -->
+            <img src="images/team/shitansha-baral.jpg" alt="Ms. Shitansha Baral" width="160" height="160" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="ab-person-info">
+            <h3>Ms. Shitansha Baral</h3>
+            <p class="ab-role">Digital Marketing &amp; IT Head</p>
+            <a class="ab-phone" href="tel:+9779761499639">☎ 9761499639</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---------- CTA ---------- -->
+    <section class="ab-wrap ab-cta-wrap" aria-labelledby="cta-heading">
+      <div class="ab-cta">
+        <div class="ab-cta-top">
+          <div>
+            <p class="ab-kicker ab-kicker-light">Your next step starts here</p>
+            <h2 id="cta-heading">Ready To Study Abroad?</h2>
+            <p>Book a counseling session and get a personalized study plan for your preferred destination.</p>
+          </div>
+          <div class="ab-cta-buttons">
+            <a class="btn btn-white" href="contact.html">Book Free Counseling</a>
+            <a class="btn btn-ghost" href="https://wa.me/9779767259997" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+        <ul class="ab-cta-contact">
+          <li><a href="tel:015338541">☎ 01-5338541</a></li>
+          <li><a href="mailto:orientconsultancynepal@gmail.com">✉ orientconsultancynepal@gmail.com</a></li>
+          <li>⚲ PK Campus, Bagbazar-28, Kathmandu</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+    <ul class="footer-social" aria-label="Follow Orient Consultancy">
+      <li><a href="https://www.facebook.com/OrientConsultancyNepal" target="_blank" rel="noopener" aria-label="Orient Consultancy on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1 1.2-1H17V2.2C16.6 2.1 15.6 2 14.5 2 12 2 10.3 3.5 10.3 6.2V8H7.5v3.5h2.8V22H14V11.5h2.8L17.3 8H14z" fill="currentColor"/></svg>
+      </a></li>
+      <li><a href="https://www.instagram.com/orient_nepal/" target="_blank" rel="noopener" aria-label="Orient Consultancy on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
+      </a></li>
+      <li><a href="https://www.tiktok.com/@orient.consultancy" target="_blank" rel="noopener" aria-label="Orient Consultancy on TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.2c-1.4.1-2.7-.3-3.8-1.1v5.6a5.7 5.7 0 11-5.7-5.7c.3 0 .6 0 .9.1v3.3a2.5 2.5 0 102 2.4V3h2.8z" fill="currentColor"/></svg>
+      </a></li>
+    </ul>
+    <p>Copyright © 2026 Orient Consultancy Pvt. Ltd. Designed &amp; Developed by <a href="https://shitanshabaral.com.np/" target="_blank" rel="noopener">Shitansha</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

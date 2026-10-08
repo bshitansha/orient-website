@@ -1,0 +1,250 @@
+/* ===== nav-responsive.css : navbar for every screen size ===== */
+
+/* ----- From 768px up: the full-screen navbar design ----- */
+@media (min-width: 768px) {
+  .main-nav > ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .has-dropdown { position: relative; }   /* the dropdown now lines up with "Study destination" */
+
+  /* Sliding highlight (created by script.js) */
+  .nav-indicator {
+    position: absolute;
+    top: 50%; left: 0;
+    height: 42px;
+    margin-top: -21px;
+    border-radius: 999px;
+    background: rgba(20, 51, 90, .07);
+    box-shadow: inset 0 0 0 1px rgba(20, 51, 90, .05);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .4s cubic-bezier(.3, .8, .3, 1), width .4s cubic-bezier(.3, .8, .3, 1), opacity .25s ease;
+  }
+
+  .main-nav > ul > li > a:hover,
+  .dropdown-toggle:hover,
+  .has-dropdown:hover > .dropdown-toggle,
+  .has-dropdown:focus-within > .dropdown-toggle { color: var(--navy); }
+
+  /* Current page: dark text + small dot under the word */
+  .main-nav > ul > li > a[aria-current="page"]::after,
+  .has-dropdown.current > .dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: 1px;
+    width: 5px; height: 5px;
+    margin-left: -2.5px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  .has-dropdown:hover > .dropdown-toggle svg,
+  .has-dropdown:focus-within > .dropdown-toggle svg { transform: rotate(180deg); }
+
+  /* Dropdown card (wide enough for each country on ONE line) */
+  .main-nav .dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: auto;
+    right: 0;
+    width: min(390px, calc(100vw - 32px));
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(20, 51, 90, .16), 0 2px 6px rgba(20, 51, 90, .05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .25s ease, transform .3s ease, visibility 0s linear .3s;
+  }
+  .main-nav .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -16px; left: 0; right: 0; height: 16px;
+  }
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown,
+  .has-dropdown.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  /* items appear one after another */
+  .dropdown li { opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease; }
+  .has-dropdown:hover .dropdown li,
+  .has-dropdown:focus-within .dropdown li,
+  .has-dropdown.open .dropdown li { opacity: 1; transform: none; }
+  .dropdown > li:nth-child(1) { transition-delay: .03s; }
+  .dropdown > li:nth-child(2) { transition-delay: .06s; }
+  .dropdown > li:nth-child(3) { transition-delay: .09s; }
+  .dropdown > li:nth-child(4) { transition-delay: .12s; }
+  .dropdown > li:nth-child(5) { transition-delay: .15s; }
+  .dropdown > li:nth-child(6) { transition-delay: .18s; }
+  .dropdown > li:nth-child(7) { transition-delay: .21s; }
+
+  .dropdown a {
+    justify-content: space-between;
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3a3a3a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background .2s ease, color .2s ease, padding-left .25s ease;
+  }
+  .dropdown a::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 20%;
+    width: 3px; height: 60%;
+    border-radius: 3px;
+    background: var(--primary);
+    transform: scaleY(0);
+    transition: transform .25s ease;
+  }
+  .dropdown a::after {
+    content: "→";
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity .2s ease, transform .25s ease;
+  }
+  .dropdown a:hover { background: var(--tint); color: var(--navy); padding-left: 22px; }
+  .dropdown a:hover::before { transform: scaleY(1); }
+  .dropdown a:hover::after { opacity: 1; transform: none; }
+}
+
+/* ----- Tablet (768px - 1023px): same horizontal navbar, slightly smaller ----- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-header { padding: 10px 20px; }
+  .logo img { width: 170px; }
+  .site-header.is-scrolled .logo img { width: 150px; }
+
+  .nav-toggle { display: none; }
+  .main-nav {
+    display: block; position: static;
+    padding: 0; background: none; box-shadow: none;
+    max-height: none; overflow: visible;
+  }
+  .main-nav > ul { flex-direction: row; align-items: center; gap: 2px; }
+  .main-nav > ul > li > a,
+  .main-nav > ul > li > .dropdown-toggle {
+    width: auto; justify-content: flex-start;
+    padding: 10px 11px; font-size: 15px; border-bottom: 0;
+  }
+  .nav-indicator { height: 38px; margin-top: -19px; }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown,
+  .has-dropdown.open .dropdown { display: flex; }
+
+  .main-nav .dropdown li > a {
+    width: 100%; justify-content: space-between;
+    padding: 14px 16px; font-size: 16px; border-bottom: 0;
+  }
+  .main-nav .dropdown li > a:hover { padding-left: 22px; }
+}
+
+/* ----- Phone (under 768px): hamburger menu with the same hover / colour effects ----- */
+@media (max-width: 767px) {
+  .main-nav { border-top: 1px solid var(--border); max-height: calc(100vh - 80px); overflow-y: auto; }
+  .main-nav > ul { gap: 4px; padding-top: 8px; }
+
+  .main-nav > ul > li > a,
+  .main-nav > ul > li > .dropdown-toggle {
+    padding: 14px 16px; font-size: 17px; border-bottom: 0; border-radius: 14px;
+    transition: background .2s ease, color .2s ease;
+  }
+  .main-nav > ul > li > a:hover,
+  .main-nav > ul > li > a:focus-visible,
+  .main-nav > ul > li > a:active,
+  .main-nav > ul > li > .dropdown-toggle:hover,
+  .main-nav > ul > li > .dropdown-toggle:focus-visible,
+  .main-nav > ul > li > .dropdown-toggle:active,
+  .has-dropdown.open > .dropdown-toggle { background: rgba(20, 51, 90, .07); color: var(--navy); }
+
+  .main-nav > ul > li > a[aria-current="page"]::after {
+    content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--primary);
+  }
+
+  .main-nav .dropdown { margin: 6px 0 10px; padding: 6px 8px; background: var(--tint); border-radius: 16px; }
+  .main-nav .dropdown li > a {
+    position: relative; overflow: hidden; border-radius: 12px;
+    padding: 12px 14px; font-size: 16px; border-bottom: 0;
+    transition: background .2s ease, color .2s ease, padding-left .25s ease;
+  }
+  .main-nav .dropdown li > a::before {
+    content: ""; position: absolute; left: 0; top: 20%; width: 3px; height: 60%;
+    border-radius: 3px; background: var(--primary);
+    transform: scaleY(0); transition: transform .25s ease;
+  }
+  .main-nav .dropdown li > a::after {
+    content: "→"; color: var(--primary); opacity: 0; transform: translateX(-8px);
+    transition: opacity .2s ease, transform .25s ease;
+  }
+  .main-nav .dropdown li > a:hover,
+  .main-nav .dropdown li > a:focus-visible,
+  .main-nav .dropdown li > a:active { background: #fff; color: var(--navy); padding-left: 20px; }
+  .main-nav .dropdown li > a:hover::before,
+  .main-nav .dropdown li > a:focus-visible::before,
+  .main-nav .dropdown li > a:active::before { transform: scaleY(1); }
+  .main-nav .dropdown li > a:hover::after,
+  .main-nav .dropdown li > a:focus-visible::after,
+  .main-nav .dropdown li > a:active::after { opacity: 1; transform: none; }
+}
+
+/* Hamburger turns into an X */
+.nav-toggle span { transition: transform .25s ease, opacity .2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ==========================================================
+   "Other European Countries": opens INSIDE the dropdown (all screen sizes)
+   Keep this block at the very bottom of the file.
+   ========================================================== */
+.main-nav .dropdown .has-sub::after { content: none; }          /* old side-menu bridge off */
+.main-nav .dropdown li > a.sub-toggle { flex-direction: row; }
+
+/* chevron: points down when closed, up when open */
+.main-nav .dropdown li > a.sub-toggle::after,
+.main-nav .dropdown li > a.sub-toggle:hover::after,
+.main-nav .dropdown li > a.sub-toggle:active::after,
+.main-nav .dropdown li > a.sub-toggle:focus-visible::after {
+  content: "›"; font-size: 24px; line-height: 1; color: #6f7f96;
+  opacity: 1; transform: rotate(90deg);
+  transition: transform .3s ease, color .2s ease;
+}
+.main-nav .dropdown li.has-sub.open > a.sub-toggle,
+.main-nav .dropdown li.has-sub.open > a.sub-toggle:hover { background: var(--tint); color: var(--navy); }
+.main-nav .dropdown li.has-sub.open > a.sub-toggle::after,
+.main-nav .dropdown li.has-sub.open > a.sub-toggle:hover::after { color: var(--primary); transform: rotate(-90deg); }
+
+/* the countries slide open under the row */
+.main-nav .dropdown .submenu {
+  display: flex; flex-direction: column; position: static;
+  width: auto; margin: 0; padding: 0 10px;
+  border: 0; border-radius: 14px; box-shadow: none;
+  background: rgba(20, 51, 90, .045);
+  max-height: 0; overflow: hidden;
+  opacity: 0; visibility: hidden; transform: none;
+  transition: max-height .35s ease, padding .3s ease, margin .3s ease, opacity .25s ease, visibility 0s linear .35s;
+}
+.main-nav .dropdown .has-sub.open > .submenu {
+  max-height: 340px; margin: 4px 0 6px; padding: 8px 10px 10px;
+  opacity: 1; visibility: visible; transition-delay: 0s;
+}
+.main-nav .dropdown .submenu li > a {
+  justify-content: flex-start; border-bottom: 0; border-radius: 10px;
+  padding: 11px 14px; font-size: 15px; color: #3a3a3a;
+}
+.main-nav .dropdown .submenu li > a:hover { background: #fff; color: var(--navy); padding-left: 20px; }

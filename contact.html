@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Orient Consultancy Pvt. Ltd.</title>
+  <meta name="description" content="Contact Orient Consultancy Pvt. Ltd. in Bagbazar, Kathmandu. Call, WhatsApp, email or send your details to get student visa and study abroad guidance.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- style.css = shared header/footer/buttons. contact.css = this page only. Keep this order. -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="nav-responsive.css">
+</head>
+<body class="contact-page">
+
+  <!-- ================= HEADER (same as other pages) ================= -->
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Orient Consultancy - Home">
+      <img src="images/logo.png" alt="Orient Consultancy Pvt. Ltd." width="230" height="70">
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Study destination
+            <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown">
+            <li><a href="country.html?c=south-korea"><img class="dd-flag" src="images/flags/south-korea.svg" alt="" width="20" height="14"><span>Korean Student Visa (D-2 / D-4 Visa)</span></a></li>
+            <li><a href="country.html?c=uk"><img class="dd-flag" src="images/flags/uk.svg" alt="" width="20" height="14"><span>UK Student Visa (Tier 4 Visa)</span></a></li>
+            <li><a href="country.html?c=australia"><img class="dd-flag" src="images/flags/australia.svg" alt="" width="20" height="14"><span>Australian Student Visa (Subclass 500)</span></a></li>
+            <li><a href="country.html?c=usa"><img class="dd-flag" src="images/flags/usa.svg" alt="" width="20" height="14"><span>U.S. Student Visa (F-1 Visa)</span></a></li>
+            <li><a href="country.html?c=japan"><img class="dd-flag" src="images/flags/japan.svg" alt="" width="20" height="14"><span>Japanese Student Visa</span></a></li>
+            <li><a href="country.html?c=denmark"><img class="dd-flag" src="images/flags/denmark.svg" alt="" width="20" height="14"><span>Denmark Student Visa</span></a></li>
+            <li class="has-sub">
+              <a class="dropdown-more sub-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span>Other European Countries</span></a>
+              <ul class="submenu">
+                <li><a href="country.html?c=germany"><img class="dd-flag" src="images/flags/germany.svg" alt="" width="20" height="14"><span>Germany Student Visa</span></a></li>
+                <li><a href="country.html?c=malta"><img class="dd-flag" src="images/flags/malta.svg" alt="" width="20" height="14"><span>Malta Student Visa</span></a></li>
+                <li><a href="country.html?c=dubai"><img class="dd-flag" src="images/flags/uae.svg" alt="" width="20" height="14"><span>Dubai Student Visa</span></a></li>
+                <li><a href="country.html?c=finland"><img class="dd-flag" src="images/flags/finland.svg" alt="" width="20" height="14"><span>Finland Student Visa</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- ---------- HERO ---------- -->
+    <section class="ct-hero" aria-labelledby="page-title">
+      <!-- Dotted flight path from Kathmandu. It draws itself once when the page loads. -->
+      <svg class="ct-flight" viewBox="0 0 900 300" aria-hidden="true" preserveAspectRatio="xMaxYMid meet">
+        <path class="ct-flight-path" d="M60 250 C 260 40, 560 20, 840 90" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-dasharray="3 12" stroke-linecap="round"/>
+        <circle cx="60" cy="250" r="9" fill="#f59a1b"/>
+        <circle cx="60" cy="250" r="20" fill="none" stroke="#f59a1b" stroke-opacity=".5"/>
+        <circle class="ct-flight-end" cx="840" cy="90" r="7" fill="#ffffff"/>
+      </svg>
+      <div class="ct-hero-inner">
+        <p class="ct-kicker ct-kicker-light">Get In Touch</p>
+        <h1 id="page-title">Contact Us</h1>
+        <p class="ct-hero-sub">Tell us where you want to study. A counselor from our Bagbazar office will get back to you.</p>
+      </div>
+    </section>
+
+    <!-- ---------- FORM + CONTACT DETAILS ---------- -->
+    <section class="ct-wrap ct-main" aria-label="Contact form and details">
+
+      <!-- Form card (airmail stripe border) -->
+      <div class="ct-form-card">
+        <div class="ct-form-inner">
+          <h2>Start your study plan</h2>
+          <p class="ct-form-lead">Fill in your details and we will contact you about your preferred destination.</p>
+
+          <form id="contact-form" class="ct-form" novalidate>
+            <div class="ct-row">
+              <div class="ct-field">
+                <label for="ct-name">Full name</label>
+                <input id="ct-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+                <p class="ct-error" id="ct-name-error" aria-live="polite"></p>
+              </div>
+              <div class="ct-field">
+                <label for="ct-phone">Phone / WhatsApp number</label>
+                <input id="ct-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="98XXXXXXXX" required>
+                <p class="ct-error" id="ct-phone-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="ct-field">
+              <label for="ct-email">Email</label>
+              <input id="ct-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <p class="ct-error" id="ct-email-error" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="ct-field ct-destinations">
+              <legend>Where do you want to study?</legend>
+              <div class="ct-chips">
+            <label class="ct-chip"><input type="radio" name="destination" value="South Korea" required><span>South Korea</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="UK" required><span>UK</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Australia" required><span>Australia</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="USA" required><span>USA</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Japan" required><span>Japan</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Denmark" required><span>Denmark</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Germany" required><span>Germany</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Malta" required><span>Malta</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Dubai" required><span>Dubai</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Finland" required><span>Finland</span></label>
+            <label class="ct-chip"><input type="radio" name="destination" value="Not sure yet" required><span>Not sure yet</span></label>
+              </div>
+              <p class="ct-error" id="ct-destination-error" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="ct-field">
+              <label for="ct-message">Message <span class="ct-optional">(optional)</span></label>
+              <textarea id="ct-message" name="message" rows="4" placeholder="Your last qualification, preferred intake, or any question"></textarea>
+            </div>
+
+            <button class="btn btn-primary ct-submit" type="submit">Send my details
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+
+          <!-- Shown after a successful submit (hidden until then) -->
+          <div id="ct-success" class="ct-success" role="status" tabindex="-1" hidden>
+            <span class="ct-success-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 26 26"><path d="M5 13.5l5.5 5.5L21 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h2>Thank you, <span id="ct-success-name">student</span>!</h2>
+            <p>WhatsApp should open with all your details already typed in. Just press <strong>Send</strong> inside WhatsApp. If it did not open, tap the button below.</p>
+            <div class="ct-success-actions">
+              <a id="ct-whatsapp-send" class="btn btn-primary" href="https://wa.me/9779767259997" target="_blank" rel="noopener">Open on WhatsApp</a>
+              <button id="ct-reset" class="btn btn-outline" type="button">Fill the form again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact details -->
+      <aside class="ct-details" aria-labelledby="details-heading">
+        <p class="ct-kicker">Get In Touch</p>
+        <h2 id="details-heading">Contact Details</h2>
+
+        <ul class="ct-info">
+          <li>
+            <span class="ct-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25c1.1.37 2.3.57 3.6.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h3>Phone Numbers</h3>
+              <a href="tel:015338541">01-5338541</a>
+            </div>
+          </li>
+          <li>
+            <span class="ct-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.05-1.35A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.25l-.3-.18-3 .8.8-2.9-.2-.3A8.2 8.2 0 0112 3.8zm-3 4.1c-.2 0-.5.07-.75.35-.25.28-1 1-1 2.4s1.03 2.8 1.17 3c.14.2 2 3.2 4.95 4.35 2.45.97 2.95.78 3.48.73.53-.05 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34-.29-.15-1.7-.84-1.96-.94-.27-.1-.46-.14-.65.14-.2.29-.75.94-.92 1.13-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.2.05-.36-.02-.5-.07-.15-.65-1.6-.9-2.18-.23-.56-.47-.48-.65-.49z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h3>Whatsapp</h3>
+              <a href="https://wa.me/9779767259997" target="_blank" rel="noopener">976-7259997</a>
+            </div>
+          </li>
+          <li>
+            <span class="ct-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 8.5l9-5.5 9 5.5V19a2 2 0 01-2 2H5a2 2 0 01-2-2V8.5zm2 .2V19h14V8.7l-7 4.3-7-4.3z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:orientconsultancynepal@gmail.com">orientconsultancynepal@gmail.com</a>
+              <a href="mailto:himalayan.education.14@gmail.com">himalayan.education.14@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="ct-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h3>Address</h3>
+              <p>Beside PK Campus, Bagbazar-28, Nepal</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="ct-follow">
+          <h3>Follow Us</h3>
+          <ul>
+            <!-- Replace each "#" with your real page link -->
+            <li><a href="https://www.facebook.com/OrientConsultancyNepal" target="_blank" rel="noopener" aria-label="Orient Consultancy on Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1 1.2-1H17V2.2C16.6 2.1 15.6 2 14.5 2 12 2 10.3 3.5 10.3 6.2V8H7.5v3.5h2.8V22H14V11.5h2.8L17.3 8H14z" fill="currentColor"/></svg>
+            </a></li>
+            <li><a href="https://www.instagram.com/orient_nepal/" target="_blank" rel="noopener" aria-label="Orient Consultancy on Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
+            </a></li>
+            <li><a href="https://www.instagram.com/orient_nepal/" target="_blank" rel="noopener" aria-label="Orient Consultancy on TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.300 1.600 3.700 3.800 3.900v3.200c-1.400.1-2.700-.3-3.800-1.100v5.600a5.700 5.700 0 11-5.700-5.700c.3 0 .6 0 .9.1v3.300a2.500 2.500 0 102 2.400V3h2.800z" fill="currentColor"/></svg>
+            </a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ---------- MAP ---------- -->
+    <section class="ct-wrap ct-map-wrap" aria-labelledby="map-heading">
+      <div class="ct-map">
+        <iframe
+          title="Map showing Orient Consultancy Pvt. Ltd. in Bagbazar, Kathmandu"
+          src="https://www.google.com/maps?q=Orient+Consultancy+Pvt.+Ltd.+Bagbazar+Kathmandu&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+        <div class="ct-map-card">
+          <h2 id="map-heading">Visit our office</h2>
+          <p>Beside PK Campus, Bagbazar-28, Kathmandu</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Orient+Consultancy+Pvt.+Ltd.+Bagbazar+Kathmandu" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+    <ul class="footer-social" aria-label="Follow Orient Consultancy">
+      <li><a href="https://www.facebook.com/OrientConsultancyNepal" target="_blank" rel="noopener" aria-label="Orient Consultancy on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1 1.2-1H17V2.2C16.6 2.1 15.6 2 14.5 2 12 2 10.3 3.5 10.3 6.2V8H7.5v3.5h2.8V22H14V11.5h2.8L17.3 8H14z" fill="currentColor"/></svg>
+      </a></li>
+      <li><a href="https://www.instagram.com/orient_nepal/" target="_blank" rel="noopener" aria-label="Orient Consultancy on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
+      </a></li>
+      <li><a href="https://www.tiktok.com/@orient.consultancy" target="_blank" rel="noopener" aria-label="Orient Consultancy on TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.2c-1.4.1-2.7-.3-3.8-1.1v5.6a5.7 5.7 0 11-5.7-5.7c.3 0 .6 0 .9.1v3.3a2.5 2.5 0 102 2.4V3h2.8z" fill="currentColor"/></svg>
+      </a></li>
+    </ul>
+    <p>Copyright © 2026 Orient Consultancy Pvt. Ltd. Designed &amp; Developed by <a href="https://shitanshabaral.com.np/" target="_blank" rel="noopener">Shitansha</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
