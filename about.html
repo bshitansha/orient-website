@@ -10,16 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- style.css = shared header/footer/buttons. about.css = this page only. Keep this order. -->
+  <!-- style.css = all styles (header, footer, buttons, About page). Keep this order. -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="nav-responsive.css">
 </head>
 <body class="about-page">
 
   <!-- ================= HEADER (same as other pages) ================= -->
   <header class="site-header">
-    <a class="logo" href="index.html" aria-label="Orient Consultancy - Home">
+    <a class="logo" href="./" aria-label="Orient Consultancy - Home">
       <img src="images/logo.png" alt="Orient Consultancy Pvt. Ltd." width="230" height="70">
     </a>
 
@@ -29,15 +28,15 @@
 
     <nav id="main-nav" class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="services">Services</a></li>
         <li class="has-dropdown">
           <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
             Study destination
             <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <ul class="dropdown">
-            <li><a href="south-korea"><img class="dd-flag" src="images/flags/south-korea.svg" alt="" width="20" height="14"><span>Korean Student Visa (D-2 / D-4 Visa)</span></a></li>
+            <li><a href="korea"><img class="dd-flag" src="images/flags/south-korea.svg" alt="" width="20" height="14"><span>Korean Student Visa (D-2 / D-4 Visa)</span></a></li>
             <li><a href="uk"><img class="dd-flag" src="images/flags/uk.svg" alt="" width="20" height="14"><span>UK Student Visa (Tier 4 Visa)</span></a></li>
             <li><a href="australia"><img class="dd-flag" src="images/flags/australia.svg" alt="" width="20" height="14"><span>Australian Student Visa (Subclass 500)</span></a></li>
             <li><a href="usa"><img class="dd-flag" src="images/flags/usa.svg" alt="" width="20" height="14"><span>U.S. Student Visa (F-1 Visa)</span></a></li>
@@ -54,8 +53,8 @@
             </li>
           </ul>
         </li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about-us" aria-current="page">About</a></li>
+        <li><a href="contact">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -71,13 +70,13 @@
           <p class="ab-hero-sub">Hi, we are the Orient Consultancy team. Here you can find more information about us in this field.</p>
         </div>
 
-                <!-- Compass drawn in SVG. It settles on North, then keeps gently swaying like a real needle. -->
+        <!-- Compass drawn in SVG. It settles on North, then keeps gently swaying like a real needle. -->
         <svg class="ab-compass" viewBox="0 0 400 400" role="img" aria-label="A compass pointing north">
           <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
           <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
           <circle cx="200" cy="200" r="104" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
 
-          <!-- NEW: slowly turning ring of small marks -->
+          <!-- slowly turning ring of small marks -->
           <circle class="ab-ring" cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3" stroke-dasharray="1.5 14" stroke-linecap="round"/>
 
           <g stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round">
@@ -130,7 +129,7 @@
              "a year of successful operations" does not match "established since 2014",
              and "guaranteed visa success" is a strong promise. -->
         <p>Our key strength lies in our strong network in South Korea, allowing us to offer guaranteed visa success for students aspiring to study there. With a year of successful operations, we have quickly become a preferred choice for students seeking reliable guidance and transparent services.</p>
-        <a class="btn btn-primary" href="contact.html">Talk to a Counselor
+        <a class="btn btn-primary" href="contact">Talk to a Counselor
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -249,7 +248,8 @@
             <a class="ab-phone" href="tel:+9779767259997">☎ 9767259997</a>
           </div>
         </article>
-                <article class="ab-person">
+
+        <article class="ab-person">
           <div class="ab-avatar">
             <span class="ab-initials" aria-hidden="true">SB</span>
             <!-- Photo: images/team/shitansha-baral.jpg (square, about 400x400). Hidden automatically if missing. -->
@@ -260,51 +260,3 @@
             <p class="ab-role">Digital Marketing &amp; IT Head</p>
             <a class="ab-phone" href="tel:+9779761499639">☎ 9761499639</a>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ---------- CTA ---------- -->
-    <section class="ab-wrap ab-cta-wrap" aria-labelledby="cta-heading">
-      <div class="ab-cta">
-        <div class="ab-cta-top">
-          <div>
-            <p class="ab-kicker ab-kicker-light">Your next step starts here</p>
-            <h2 id="cta-heading">Ready To Study Abroad?</h2>
-            <p>Book a counseling session and get a personalized study plan for your preferred destination.</p>
-          </div>
-          <div class="ab-cta-buttons">
-            <a class="btn btn-white" href="contact.html">Book Free Counseling</a>
-            <a class="btn btn-ghost" href="https://wa.me/9779767259997" target="_blank" rel="noopener">WhatsApp Us</a>
-          </div>
-        </div>
-        <ul class="ab-cta-contact">
-          <li><a href="tel:015338541">☎ 01-5338541</a></li>
-          <li><a href="mailto:orientconsultancynepal@gmail.com">✉ orientconsultancynepal@gmail.com</a></li>
-          <li>⚲ PK Campus, Bagbazar-28, Kathmandu</li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-    <footer class="site-footer">
-    <ul class="footer-social" aria-label="Follow Orient Consultancy">
-      <li><a href="https://www.facebook.com/OrientConsultancyNepal" target="_blank" rel="noopener" aria-label="Orient Consultancy on Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1 1.2-1H17V2.2C16.6 2.1 15.6 2 14.5 2 12 2 10.3 3.5 10.3 6.2V8H7.5v3.5h2.8V22H14V11.5h2.8L17.3 8H14z" fill="currentColor"/></svg>
-      </a></li>
-      <li><a href="https://www.instagram.com/orient_nepal/" target="_blank" rel="noopener" aria-label="Orient Consultancy on Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>
-      </a></li>
-      <li><a href="https://www.tiktok.com/@orient.consultancy" target="_blank" rel="noopener" aria-label="Orient Consultancy on TikTok">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.2c-1.4.1-2.7-.3-3.8-1.1v5.6a5.7 5.7 0 11-5.7-5.7c.3 0 .6 0 .9.1v3.3a2.5 2.5 0 102 2.4V3h2.8z" fill="currentColor"/></svg>
-      </a></li>
-    </ul>
-    <p>Copyright © 2026 Orient Consultancy Pvt. Ltd. Designed &amp; Developed by <a href="https://shitanshabaral.com.np/" target="_blank" rel="noopener">Shitansha</a></p>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="about.js"></script>
-</body>
-</html>
