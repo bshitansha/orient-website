@@ -248,3 +248,76 @@
   padding: 11px 14px; font-size: 15px; color: #3a3a3a;
 }
 .main-nav .dropdown .submenu li > a:hover { background: #fff; color: var(--navy); padding-left: 20px; }
+
+/*mobile animation*/
+/* ==========================================================
+   MOBILE EXTRA ANIMATIONS (phones, under 768px)
+   Keep this block at the very bottom of nav-responsive.css
+   ========================================================== */
+@keyframes m-fade-up  { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes m-slide-in { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
+@keyframes m-drop-in  { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@keyframes m-pop      { 0% { opacity: 0; transform: scale(.6); } 70% { transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+
+  /* 1. Logo pops in when the page opens */
+  .logo img { animation: m-pop .6s ease both; }
+
+  /* 2. Menu links slide in one after another when you tap the hamburger */
+  .main-nav.open > ul > li { animation: m-slide-in .4s ease both; }
+  .main-nav.open > ul > li:nth-child(1) { animation-delay: .04s; }
+  .main-nav.open > ul > li:nth-child(2) { animation-delay: .10s; }
+  .main-nav.open > ul > li:nth-child(3) { animation-delay: .16s; }
+  .main-nav.open > ul > li:nth-child(4) { animation-delay: .22s; }
+  .main-nav.open > ul > li:nth-child(5) { animation-delay: .28s; }
+
+  /* 3. "Study destination" drops down, and its countries slide in one by one */
+  .has-dropdown.open > .dropdown { animation: m-drop-in .3s ease both; }
+  .has-dropdown.open > .dropdown > li { animation: m-slide-in .35s ease both; }
+  .has-dropdown.open > .dropdown > li:nth-child(1) { animation-delay: .04s; }
+  .has-dropdown.open > .dropdown > li:nth-child(2) { animation-delay: .08s; }
+  .has-dropdown.open > .dropdown > li:nth-child(3) { animation-delay: .12s; }
+  .has-dropdown.open > .dropdown > li:nth-child(4) { animation-delay: .16s; }
+  .has-dropdown.open > .dropdown > li:nth-child(5) { animation-delay: .20s; }
+  .has-dropdown.open > .dropdown > li:nth-child(6) { animation-delay: .24s; }
+  .has-dropdown.open > .dropdown > li:nth-child(7) { animation-delay: .28s; }
+  .has-sub.open > .submenu > li { animation: m-slide-in .3s ease both; }
+  .has-sub.open > .submenu > li:nth-child(2) { animation-delay: .06s; }
+  .has-sub.open > .submenu > li:nth-child(3) { animation-delay: .12s; }
+  .has-sub.open > .submenu > li:nth-child(4) { animation-delay: .18s; }
+
+  /* 4. Page title and intro text rise in when each page opens */
+  .hm-hero-text > *,
+  .ab-hero-text > *,
+  .svc-hero-text > *,
+  .ct-hero-inner > :not(svg) { animation: m-fade-up .7s cubic-bezier(.2, .7, .2, 1) both; }
+  .hm-hero-text > :nth-child(2),
+  .ab-hero-text > :nth-child(2),
+  .svc-hero-text > :nth-child(2),
+  .ct-hero-inner > :nth-child(2) { animation-delay: .12s; }
+  .hm-hero-text > :nth-child(3),
+  .ab-hero-text > :nth-child(3),
+  .svc-hero-text > :nth-child(3),
+  .ct-hero-inner > :nth-child(3) { animation-delay: .24s; }
+  .hm-hero-text > :nth-child(4),
+  .ab-hero-text > :nth-child(4),
+  .svc-hero-text > :nth-child(4),
+  .ct-hero-inner > :nth-child(4) { animation-delay: .36s; }
+
+  /* 5. Cards and sections fade + rise while you scroll (classes added by script.js) */
+  html body .m-reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(.98);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1);
+    transition-delay: var(--m-delay, 0s);
+  }
+  html body .m-reveal.m-in { opacity: 1; transform: none; }
+}
+
+/* 6. Press feedback on phones: buttons and the menu button shrink slightly when tapped */
+@media (max-width: 767px) {
+  .btn:active { transform: scale(.96); }
+  .nav-toggle { transition: transform .15s ease; }
+  .nav-toggle:active { transform: scale(.88); }
+}
