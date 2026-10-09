@@ -95,17 +95,19 @@
 
 /*mobile animations*/
 
+
 // ==========================================================
 // MOBILE SCROLL ANIMATIONS (phones only, under 768px)
-// Cards and sections fade + rise as you scroll down to them.
-// Skipped automatically if the phone has "reduce motion" on.
+// Cards fade + rise as you scroll to them, then the writing
+// inside each card (headings, text, list items, buttons)
+// appears line by line. Skipped if "reduce motion" is on.
 // ==========================================================
 (function () {
   const phone = window.matchMedia('(max-width: 767px)');
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!phone.matches || calm.matches || !('IntersectionObserver' in window)) return;
 
-  const items = document.querySelectorAll([
+  const CARDS = [
     // home page
     '.hm-step', '.hm-dest', '.hm-service', '.hm-why-text', '.hm-why-list li', '.hm-faq details', '.hm-cta',
     // about page
@@ -115,25 +117,51 @@
     '.svc-card', '.svc-cta',
     // contact page
     '.ct-form-card', '.ct-details', '.ct-map-card'
-  ].join(','));
+  ].join(',');
+
+  const TEXT = 'h1, h2, h3, h4, p, dt, dd, li, summary, .btn';                    // "writing" inside a card
+  const HEADINGS = '.hm-section .hm-eyebrow, .hm-section .hm-title, .hm-section .hm-sub'; // section titles
+
+  const cards = Array.from(document.querySelectorAll(CARDS));
+  const loose = Array.from(document.querySelectorAll(HEADINGS)).filter((el) => !el.closest(CARDS));
+  const linesOf = new Map();
+
+  // Find the writing inside every card
+  cards.forEach((card) => {
+    const lines = Array.from(card.querySelectorAll(TEXT)).filter((t) =>
+      !t.querySelector(TEXT) &&              // only the innermost text blocks
+      !t.matches(CARDS) &&
+      !t.closest('form') &&                  // never touch the contact form fields
+      t.closest(CARDS) === card              // belongs to this card, not a card inside it
+    );
+    lines.forEach((t, i) => {
+      t.classList.add('m-line');
+      t.style.setProperty('--m-i', Math.min(i, 8));
+    });
+    linesOf.set(card, lines);
+  });
 
   const io = new IntersectionObserver((entries) => {
-    let n = 0;                                   // small delay between cards that appear together
+    let n = 0;                                // small delay between cards that appear together
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       el.style.setProperty('--m-delay', Math.min(n++ * 0.09, 0.45) + 's');
       el.classList.add('m-in');
       io.unobserve(el);
-      // when the animation is finished, give the element back to its normal CSS (hover, press, etc.)
+      // when everything has finished, give the elements back to their normal CSS (hover, press, etc.)
       setTimeout(() => {
         el.classList.remove('m-reveal', 'm-in');
         el.style.removeProperty('--m-delay');
-      }, 1300);
+        (linesOf.get(el) || []).forEach((t) => {
+          t.classList.remove('m-line');
+          t.style.removeProperty('--m-i');
+        });
+      }, 2800);
     });
   }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
-  items.forEach((el) => {
+  cards.concat(loose).forEach((el) => {
     el.classList.add('m-reveal');
     io.observe(el);
   });
