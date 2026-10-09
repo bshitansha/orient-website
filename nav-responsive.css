@@ -249,7 +249,6 @@
 }
 .main-nav .dropdown .submenu li > a:hover { background: #fff; color: var(--navy); padding-left: 20px; }
 
-/*mobile animation*/
 /* ==========================================================
    MOBILE EXTRA ANIMATIONS (phones, under 768px)
    Keep this block at the very bottom of nav-responsive.css
@@ -313,6 +312,15 @@
     transition-delay: var(--m-delay, 0s);
   }
   html body .m-reveal.m-in { opacity: 1; transform: none; }
+
+  /* 5b. The writing inside each card appears line by line after the card */
+  html body .m-line {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .5s ease, transform .5s cubic-bezier(.2, .7, .2, 1);
+    transition-delay: calc(var(--m-delay, 0s) + .12s + var(--m-i, 0) * .07s);
+  }
+  html body .m-in .m-line { opacity: 1; transform: none; }
 }
 
 /* 6. Press feedback on phones: buttons and the menu button shrink slightly when tapped */
