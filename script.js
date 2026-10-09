@@ -91,3 +91,50 @@
     }
   }, true);
 })();
+
+
+/*mobile animations*/
+
+// ==========================================================
+// MOBILE SCROLL ANIMATIONS (phones only, under 768px)
+// Cards and sections fade + rise as you scroll down to them.
+// Skipped automatically if the phone has "reduce motion" on.
+// ==========================================================
+(function () {
+  const phone = window.matchMedia('(max-width: 767px)');
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!phone.matches || calm.matches || !('IntersectionObserver' in window)) return;
+
+  const items = document.querySelectorAll([
+    // home page
+    '.hm-step', '.hm-dest', '.hm-service', '.hm-why-text', '.hm-why-list li', '.hm-faq details', '.hm-cta',
+    // about page
+    '.ab-facts > div', '.ab-story-text', '.ab-route', '.ab-strength', '.ab-orient-intro',
+    '.ab-letters li', '.ab-team-head', '.ab-person', '.ab-cta',
+    // services page
+    '.svc-card', '.svc-cta',
+    // contact page
+    '.ct-form-card', '.ct-details', '.ct-map-card'
+  ].join(','));
+
+  const io = new IntersectionObserver((entries) => {
+    let n = 0;                                   // small delay between cards that appear together
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.style.setProperty('--m-delay', Math.min(n++ * 0.09, 0.45) + 's');
+      el.classList.add('m-in');
+      io.unobserve(el);
+      // when the animation is finished, give the element back to its normal CSS (hover, press, etc.)
+      setTimeout(() => {
+        el.classList.remove('m-reveal', 'm-in');
+        el.style.removeProperty('--m-delay');
+      }, 1300);
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+
+  items.forEach((el) => {
+    el.classList.add('m-reveal');
+    io.observe(el);
+  });
+})();
