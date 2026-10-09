@@ -17,7 +17,15 @@
   }
 
   const WHATSAPP = 'https://wa.me/9779767259997';
-  const slug = new URLSearchParams(window.location.search).get('c');
+   const countryUrl = (k) => (k === 'south-korea' ? 'korea' : k);
+  function getSlug() {
+    const q = new URLSearchParams(window.location.search).get('c');
+    if (q) return q;
+    const seg = window.location.pathname.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '');
+    const key = seg === 'korea' ? 'south-korea' : seg;
+    return COUNTRIES[key] ? key : null;
+  }
+  const slug = getSlug();
   const country = COUNTRIES[slug];
 
   // ---------- small helpers ----------
