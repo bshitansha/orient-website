@@ -92,10 +92,6 @@
   }, true);
 })();
 
-
-/*mobile animations*/
-
-
 // ==========================================================
 // MOBILE SCROLL ANIMATIONS (phones only, under 768px)
 // Cards fade + rise as you scroll to them, then the writing
